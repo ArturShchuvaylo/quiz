@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 const SingleSelect = ({ question }) => {
   return (
     <div className="options">
-      {question.options.map((option, index) => (
+      {question.options.map((option) => (
         <Link className="link" to={question.next} key={option}>
           <button className="btn btn-option" key={option}>
             {option}
