@@ -1,8 +1,11 @@
-import Question from "./Question";
+import { Outlet } from "react-router-dom";
+import Progress from "./Progress";
+
 function Main() {
   return (
     <main className="main">
-      <Question />
+      <Progress />
+      <Outlet />
     </main>
   );
 }
