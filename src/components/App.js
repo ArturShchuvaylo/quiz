@@ -9,6 +9,10 @@ import fetchData from "../api/fetchData";
 import Main from "./Main";
 import Question from "./Question";
 import Loader from "./Loader";
+import Spinner from "./Spinner";
+import Email from "./Email";
+import Error from "./Error";
+import Finish from "./Finish";
 
 const initialState = {
   questions: [],
@@ -57,6 +61,8 @@ function App() {
   return (
     <div className="app">
       {status === "loading" && <Loader />}
+      {status === "error" && <Error />}
+
       {status === "active" && (
         <Router>
           <Routes>
@@ -64,6 +70,10 @@ function App() {
               <Route path="/" element={<Navigate to="/1" />} />
               {renderQuestionRoutes}
             </Route>
+            <Route path="/spinner" element={<Spinner />} />
+            <Route path="/email" element={<Email />} />
+            <Route path="/finish" element={<Finish />} />
+            <Route path="*" element={<Error />} />
           </Routes>
         </Router>
       )}

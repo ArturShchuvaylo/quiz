@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-const MultipleSelect = ({ question }) => {
+const Bubble = ({ question }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
 
   const handleOptionClick = (option) => {
@@ -12,26 +12,28 @@ const MultipleSelect = ({ question }) => {
   };
 
   return (
-    <div className="options">
+    <div className="options-bubble">
       {question.options.map((option) => (
         <div
           key={option}
           className={
             selectedOptions.includes(option)
-              ? "btn btn-checked btn-option"
-              : "btn btn-option"
+              ? "btn btn-checked btn-circle "
+              : "btn btn-circle"
           }
           onClick={() => handleOptionClick(option)}
         >
-          <div className="container-checkbox">
-            <p>{option}</p>
-            <label className="checkbox-label">
+          <div className="bubble-container ">
+            <div className="bubble-card">
+              <div className="bubble-card-icon">{1}</div>
+              <div className="bubble-card-title">{option}</div>
+            </div>
+            <label>
               <input
                 className="checkbox-input"
                 checked={selectedOptions.includes(option)}
                 type="checkbox"
               />
-              <span className="checkbox-custom"></span>
             </label>
           </div>
         </div>
@@ -40,4 +42,4 @@ const MultipleSelect = ({ question }) => {
   );
 };
 
-export default MultipleSelect;
+export default Bubble;

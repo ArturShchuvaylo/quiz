@@ -5,6 +5,7 @@
   --color-light: #f1f3f5;
 
   --color-theme: #1098ad;
+  --color-theme-light: #1098ad4f;
   --color-accent: #ffa94d;
 }
 
@@ -60,7 +61,7 @@ h4 {
 }
 
 .main {
-  width: 70rem;
+  width: 90rem;
 }
 
 .question-head {
@@ -79,6 +80,13 @@ h4 {
   margin-bottom: 3.2rem;
 }
 
+.options-bubble {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
 .selected {
   background-color: var(--color-light);
 }
@@ -94,6 +102,56 @@ h4 {
   cursor: pointer;
   border-radius: 100px;
   transition: 0.3s;
+}
+
+/* .nex-button {
+  display: flex;
+  justify-content: center;
+} */
+
+.btn[disabled]:hover {
+  cursor: not-allowed;
+}
+
+.btn-ui {
+  float: right;
+}
+
+.question-head {
+  margin-bottom: 2.2rem;
+  text-align: center;
+}
+.question-head p {
+  font-size: 1.7rem;
+  font-weight: 100;
+}
+
+@media (max-width: 768px) {
+  .question-head p {
+    font-size: 2.5vw;
+  }
+}
+
+.bubble-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+}
+
+.btn-checked {
+  border: 2px solid var(--color-theme);
+  background-color: var(--color-theme-light);
+}
+
+.btn-option:not([disabled]):hover {
+  transform: translateX(1.2rem);
 }
 
 .btn-option {

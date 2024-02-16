@@ -56,7 +56,7 @@
       "type": "bubble",
       "order": 5,
       "path": "/5",
-      "next": "/loading"
+      "next": "/spinner"
     }
   ]
 }
