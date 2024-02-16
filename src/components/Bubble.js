@@ -13,7 +13,7 @@ const Bubble = ({ question }) => {
 
   return (
     <div className="options-bubble">
-      {question.options.map((option) => (
+      {question.options.map((option, index) => (
         <div
           key={option}
           className={
@@ -25,7 +25,7 @@ const Bubble = ({ question }) => {
         >
           <div className="bubble-container ">
             <div className="bubble-card">
-              <div className="bubble-card-icon">{1}</div>
+              <div className="bubble-card-icon">{question.icons[index]}</div>
               <div className="bubble-card-title">{option}</div>
             </div>
             <label>

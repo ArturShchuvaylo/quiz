@@ -13,6 +13,7 @@
       "title": "What gender do you identify with?",
       "subtitle": "Please share how do you identify yourself",
       "options": ["Female", "Male", "Other"],
+      "icons": ["👩", "👨‍🦰", "🤫"],
       "type": "single-select-image",
       "order": 2,
       "path": "/2",
@@ -53,6 +54,7 @@
         "Young Adult",
         "Bad Boy"
       ],
+      "icons": ["🐺", "💃🏼", "👑", "🤑", "🥰", "💁‍♀️", "🤠"],
       "type": "bubble",
       "order": 5,
       "path": "/5",
