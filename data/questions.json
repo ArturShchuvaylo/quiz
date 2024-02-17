@@ -6,8 +6,8 @@
       "options": ["English", "French", "German", "Spanish"],
       "type": "single-select",
       "order": 1,
-      "path": "/1",
-      "next": "/2"
+      "path": "/quiz/1",
+      "next": "/quiz/2"
     },
     {
       "title": "What gender do you identify with?",
@@ -16,8 +16,8 @@
       "icons": ["👩", "👨‍🦰", "🤫"],
       "type": "single-select-image",
       "order": 2,
-      "path": "/2",
-      "next": "/3"
+      "path": "/quiz/2",
+      "next": "/quiz/3"
     },
     {
       "title": "What is your age?",
@@ -25,8 +25,8 @@
       "options": ["18-29 years", "30-39 years", "40-49 years", "50+"],
       "type": "single-select",
       "order": 3,
-      "path": "/3",
-      "next": "/4"
+      "path": "/quiz/3",
+      "next": "/quiz/4"
     },
     {
       "title": "What do you hate the most in a book?",
@@ -39,8 +39,8 @@
       ],
       "type": "multiple-select",
       "order": 4,
-      "path": "/4",
-      "next": "/5"
+      "path": "/quiz/4",
+      "next": "/quiz/5"
     },
     {
       "title": "What are your favorite topics?",
@@ -57,7 +57,7 @@
       "icons": ["🐺", "💃🏼", "👑", "🤑", "🥰", "💁‍♀️", "🤠"],
       "type": "bubble",
       "order": 5,
-      "path": "/5",
+      "path": "/quiz/5",
       "next": "/spinner"
     }
   ]

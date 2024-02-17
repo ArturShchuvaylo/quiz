@@ -22,10 +22,6 @@ function Question({ question }) {
       {question.type === "single-select" && (
         <SingleSelect question={question} />
       )}
-      <Link to={question.next} className="link nex-button">
-        {(question.type === "bubble" ||
-          question.type === "multiple-select") && <Button />}
-      </Link>
     </div>
   );
 }

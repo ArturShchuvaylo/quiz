@@ -1,7 +1,27 @@
+import React, { useState } from "react";
 import Button from "./Button";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Email() {
+  const [email, setEmail] = useState("");
+  const [isValidEmail, setIsValidEmail] = useState(true);
+  const navigate = useNavigate();
+
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const handleSubmit = () => {
+    const isValid = validateEmail(email);
+    setIsValidEmail(isValid);
+    if (isValid) {
+      navigate("/finish");
+    }
+  };
+
+  const disable = email.length === 0;
+
   return (
     <div className="main">
       <div className="question-head">
@@ -10,12 +30,25 @@ function Email() {
       </div>
 
       <div className="email-input-container">
-        <input type="email" placeholder="your email" className="email-input" />
+        <input
+          type="email"
+          placeholder="your email"
+          className={isValidEmail ? "email-input" : "email-input invalid"}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        {!isValidEmail && (
+          <div className="error-email">Please enter a valid email address.</div>
+        )}
       </div>
 
-      <Link to="/finish" className="link nex-button">
-        <Button />
-      </Link>
+      <div
+        // to="/finish"
+        // className="link nex-button"
+        onClick={() => handleSubmit()}
+      >
+        <Button disable={disable} />
+      </div>
     </div>
   );
 }

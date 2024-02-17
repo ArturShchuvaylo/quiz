@@ -28,7 +28,7 @@ function Finish() {
           </div>
           <p className="download-text">Download my answers</p>
         </div>
-        <Link to="/1" className="link nex-button  ">
+        <Link to="/quiz/1" className="link nex-button  ">
           <Button title="Retake quiz" />
         </Link>
       </div>

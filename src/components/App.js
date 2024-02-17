@@ -50,7 +50,7 @@ function App() {
 
   console.log(questions);
 
-  const renderQuestionRoutes = questions.map((question) => (
+  const renderQuestionRoutes = questions.map((question, index) => (
     <Route
       key={question.path}
       path={question.path}
@@ -67,7 +67,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Main />}>
-              <Route path="/" element={<Navigate to="/1" />} />
+              <Route path="/" element={<Navigate to="/quiz/1" />} />
               {renderQuestionRoutes}
             </Route>
             <Route path="/spinner" element={<Spinner />} />
