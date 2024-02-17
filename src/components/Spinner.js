@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Spinner() {
   const [percentage, setPercentage] = useState(0);
   const navigate = useNavigate();
+  const { t } = useTranslation();
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -30,7 +32,7 @@ function Spinner() {
         <div className="spinner"></div>
         <div className="percentage">{percentage}%</div>
       </div>
-      <p className="text-below"> Finding collections for you...</p>
+      <p className="text-below"> {t(`spinner`)}</p>
     </>
   );
 }

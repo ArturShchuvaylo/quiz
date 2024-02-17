@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 const MultipleSelect = ({ question }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
-  console.log(selectedOptions);
+  const { t } = useTranslation();
 
   const handleOptionClick = (option) => {
     if (selectedOptions.includes(option)) {
@@ -19,7 +20,7 @@ const MultipleSelect = ({ question }) => {
   return (
     <>
       <div className="options">
-        {question.options.map((option) => (
+        {question.options.map((option, index) => (
           <div
             key={option}
             className={
@@ -32,7 +33,9 @@ const MultipleSelect = ({ question }) => {
             // }}
           >
             <div className="container-checkbox">
-              <p>{option}</p>
+              <p>
+                {t(`questions.question-${question.order}.option-${index + 1}`)}
+              </p>
               <label className="checkbox-label">
                 <input
                   className="checkbox-input"

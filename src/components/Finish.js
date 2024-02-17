@@ -1,15 +1,15 @@
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 function Finish() {
+  const { t } = useTranslation();
   return (
     <>
       <div className="main">
         <div className="question-head">
-          <h4>
-            Thank you <br />
-            for supporting us and passing quiz
-          </h4>
+          <h4>{t(`finish.title`)}</h4>
+          <p> {t(`finish.subtitle`)}</p>
         </div>
         <div className="image-container">
           <img
@@ -26,7 +26,7 @@ function Finish() {
               className="download-image"
             />
           </div>
-          <p className="download-text">Download my answers</p>
+          <p className="download-text">{t(`finish.download`)}</p>
         </div>
         <Link to="/quiz/1" className="link nex-button  ">
           <Button title="Retake quiz" />

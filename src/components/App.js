@@ -1,4 +1,4 @@
-import React, { useEffect, useReducer } from "react";
+import React, { Suspense, useEffect, useReducer } from "react";
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,6 +13,8 @@ import Spinner from "./Spinner";
 import Email from "./Email";
 import Error from "./Error";
 import Finish from "./Finish";
+
+import "../i18n";
 
 const initialState = {
   questions: [],
@@ -47,8 +49,6 @@ function App() {
       .then((data) => dispatch({ type: "dataReceived", payload: data }))
       .catch((error) => dispatch({ type: "dataFailed", payload: error }));
   }, []);
-
-  console.log(questions);
 
   const renderQuestionRoutes = questions.map((question, index) => (
     <Route

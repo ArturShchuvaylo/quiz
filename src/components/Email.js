@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import Button from "./Button";
 import { useNavigate } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Email() {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
   const navigate = useNavigate();
+
+  const { t } = useTranslation();
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -25,21 +28,19 @@ function Email() {
   return (
     <div className="main">
       <div className="question-head">
-        <h4>EMAIL</h4>
-        <p>Enter your email to get full access</p>
+        <h4>{t(`email.title`)}</h4>
+        <p>{t(`email.subtitle`)}</p>
       </div>
 
       <div className="email-input-container">
         <input
           type="email"
-          placeholder="your email"
+          placeholder="email"
           className={isValidEmail ? "email-input" : "email-input invalid"}
           value={email}
           onChange={(e) => setEmail(e.target.value)}
         />
-        {!isValidEmail && (
-          <div className="error-email">Please enter a valid email address.</div>
-        )}
+        {!isValidEmail && <div className="error-email">{t(`email.error`)}</div>}
       </div>
 
       <div

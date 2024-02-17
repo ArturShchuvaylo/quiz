@@ -1,0 +1,61 @@
+{
+  "questions": {
+    "question-1": {
+      "title": "Was ist Ihre bevorzugte Sprache?",
+      "subtitle": "Wählen Sie eine Sprache",
+      "option-1": "Englisch",
+      "option-2": "Französisch",
+      "option-3": "Deutsch",
+      "option-4": "Spanisch"
+    },
+    "question-2": {
+      "title": "Mit welchem Geschlecht identifizieren Sie sich?",
+      "subtitle": "Bitte teilen Sie mit, wie Sie sich identifizieren",
+      "option-1": "Weiblich",
+      "option-2": "Männlich",
+      "option-3": "Andere"
+    },
+    "question-3": {
+      "title": "Wie alt sind Sie?",
+      "subtitle": "",
+      "option-1": "18-29 Jahre",
+      "option-2": "30-39 Jahre",
+      "option-3": "40-49 Jahre",
+      "option-4": "50+"
+    },
+    "question-4": {
+      "title": "Was hassen Sie am meisten an einem Buch?",
+      "subtitle": "",
+      "option-1": "Mangel an Logik",
+      "option-2": "Langsames Tempo",
+      "option-3": "Mangel an Humor",
+      "option-4": "Viel zu generisches Ende"
+    },
+    "question-5": {
+      "title": "Was sind Ihre Lieblingsthemen?",
+      "subtitle": "Wählen Sie bis zu 3 Themen aus, die Ihnen gefallen",
+      "option-1": "Werwolf",
+      "option-2": "Aktion",
+      "option-3": "Königliche Obsession",
+      "option-4": "Milliardär",
+      "option-5": "Romantik",
+      "option-6": "Junge Erwachsene",
+      "option-7": "Bad Boy"
+    }
+  },
+  "spinner": "Sammlungen für Sie finden...",
+  "email": {
+    "title": "E-Mail",
+    "subtitle": "Geben Sie Ihre E-Mail ein, um vollen Zugriff zu erhalten",
+    "error": "Bitte geben Sie eine gültige E-Mail-Adresse ein."
+  },
+  "finish": {
+    "title": "Danke",
+    "subtitle": "für Ihre Unterstützung und das Bestehen des Quiz",
+    "download": "Laden Sie meine Antworten herunter"
+  },
+  "buttons": {
+    "button-next": "Weiter",
+    "button-retake-quiz": "Quiz erneut machen"
+  }
+}

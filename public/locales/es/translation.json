@@ -1,0 +1,61 @@
+{
+  "questions": {
+    "question-1": {
+      "title": "¿Cuál es tu idioma preferido?",
+      "subtitle": "Elige idioma",
+      "option-1": "Inglés",
+      "option-2": "Francés",
+      "option-3": "Alemán",
+      "option-4": "Español"
+    },
+    "question-2": {
+      "title": "¿Con qué género te identificas?",
+      "subtitle": "Por favor, comparte cómo te identificas",
+      "option-1": "Femenino",
+      "option-2": "Masculino",
+      "option-3": "Otro"
+    },
+    "question-3": {
+      "title": "¿Cuál es tu edad?",
+      "subtitle": "",
+      "option-1": "18-29 años",
+      "option-2": "30-39 años",
+      "option-3": "40-49 años",
+      "option-4": "50+"
+    },
+    "question-4": {
+      "title": "¿Qué es lo que más odias en un libro?",
+      "subtitle": "",
+      "option-1": "Falta de lógica",
+      "option-2": "Velocidad lenta",
+      "option-3": "Falta de humor",
+      "option-4": "Un final demasiado genérico"
+    },
+    "question-5": {
+      "title": "¿Cuáles son tus temas favoritos?",
+      "subtitle": "Elige hasta 3 temas que te gusten",
+      "option-1": "Hombre lobo",
+      "option-2": "Acción",
+      "option-3": "Obsesión real",
+      "option-4": "Billionaire",
+      "option-5": "Romance",
+      "option-6": "Jóvenes adultos",
+      "option-7": "Chico malo"
+    }
+  },
+  "spinner": "Encontrando colecciones para ti...",
+  "email": {
+    "title": "Correo electrónico",
+    "subtitle": "Ingrese su correo electrónico para obtener acceso completo",
+    "error": "Por favor, introduce una dirección de correo electrónico válida."
+  },
+  "finish": {
+    "title": "Gracias",
+    "subtitle": "por tu apoyo y por superar el cuestionario",
+    "download": "Descargar mis respuestas"
+  },
+  "buttons": {
+    "button-next": "Siguiente",
+    "button-retake-quiz": "Volver a realizar el cuestionario"
+  }
+}

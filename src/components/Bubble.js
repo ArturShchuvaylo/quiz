@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Button from "./Button";
+import { useTranslation } from "react-i18next";
 
 const Bubble = ({ question }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
+  const { t } = useTranslation();
 
   const handleOptionClick = (option) => {
     if (selectedOptions.includes(option)) {
@@ -31,7 +33,11 @@ const Bubble = ({ question }) => {
             <div className="bubble-container ">
               <div className="bubble-card">
                 <div className="bubble-card-icon">{question.icons[index]}</div>
-                <div className="bubble-card-title">{option}</div>
+                <div className="bubble-card-title">
+                  {t(
+                    `questions.question-${question.order}.option-${index + 1}`
+                  )}
+                </div>
               </div>
               <label>
                 <input

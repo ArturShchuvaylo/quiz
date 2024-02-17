@@ -2,15 +2,16 @@ import Bubble from "./Bubble";
 import MultipleSelect from "./MultipleSelect";
 import SingleSelect from "./SingleSelect";
 import SingleSelectImage from "./SingleSelectImage";
-import Button from "./Button";
-import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Question({ question }) {
+  const { t } = useTranslation();
+
   return (
     <div className="main">
       <div className="question-head">
-        <h4>{question.title}</h4>
-        <p>{question.subtitle}</p>
+        <h4>{t(`questions.question-${question.order}.title`)}</h4>
+        <p>{t(`questions.question-${question.order}.subtitle`)}</p>
       </div>
       {question.type === "bubble" && <Bubble question={question} />}
       {question.type === "multiple-select" && (
