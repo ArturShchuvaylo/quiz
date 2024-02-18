@@ -17,7 +17,7 @@ In this project, the following technologies were utilized:
 
 
 - Local JSON server
-- `useReducer`
+- useReducer
 - SCSS
 - i18next library
-- `react-router-dom`
+- react-router-dom
