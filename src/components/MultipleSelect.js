@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
 
-const MultipleSelect = ({ question }) => {
+const MultipleSelect = ({ question, handleOptionClick }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const { t } = useTranslation();
 
-  const handleOptionClick = (option) => {
+  const handleClick = (option) => {
     if (selectedOptions.includes(option)) {
       setSelectedOptions(selectedOptions.filter((item) => item !== option));
     } else {
@@ -42,7 +42,7 @@ const MultipleSelect = ({ question }) => {
                   checked={selectedOptions.includes(option)}
                   type="checkbox"
                   onChange={() => {
-                    handleOptionClick(option);
+                    handleClick(option);
                   }}
                 />
                 <span className="checkbox-custom"></span>
@@ -51,7 +51,11 @@ const MultipleSelect = ({ question }) => {
           </div>
         ))}
       </div>
-      <Link to={question.next} className="link">
+      <Link
+        to={question.next}
+        onClick={() => handleOptionClick(selectedOptions)}
+        className="link"
+      >
         <Button disable={disable} />
       </Link>
     </>

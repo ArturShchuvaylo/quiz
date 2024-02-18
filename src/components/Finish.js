@@ -2,8 +2,47 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
 
-function Finish() {
+function Finish({ handleRetake, answers }) {
   const { t } = useTranslation();
+
+  const downloadCSV = (answers, filename) => {
+    const csv = convertToCSV(answers);
+    const blob = new Blob([csv], { type: "text/csv;charset=utf-8;" });
+
+    if (navigator.msSaveBlob) {
+      navigator.msSaveBlob(blob, filename);
+    } else {
+      const link = document.createElement("a");
+      if (link.download !== undefined) {
+        const url = URL.createObjectURL(blob);
+        link.setAttribute("href", url);
+        link.setAttribute("download", filename);
+        link.style.visibility = "hidden";
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+      }
+    }
+  };
+
+  function convertToCSV(answers) {
+    const headers = ["order", "title", "type", "answer"];
+    const rows = [headers.join(",")];
+
+    answers.forEach((answer) => {
+      const { order, title, type, answer: userAnswer } = answer;
+      const row = [order, title, type, userAnswer].map((value) => {
+        if (typeof value === "string") {
+          // Замінюємо подвійні лапки на подвійні подвійні лапки, щоб уникнути проблем з форматом CSV
+          return `"${value.replace(/"/g, '""')}"`;
+        }
+        return value;
+      });
+      rows.push(row.join(","));
+    });
+    return rows.join("\n");
+  }
+
   return (
     <>
       <div className="main">
@@ -18,7 +57,10 @@ function Finish() {
             className="thank-you-image"
           />
         </div>
-        <div className="download-container">
+        <div
+          onClick={() => downloadCSV(answers, "quiz.csv")}
+          className="download-container"
+        >
           <div className="download-icon">
             <img
               src="https://s3-alpha-sig.figma.com/img/f6c9/297b/ea932914bfb8e0c8d2e7450798a37696?Expires=1708905600&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=fFFadPS0uLnN5nChqHmrIjfbM06lavC4bWpXegiGvPTiJwRkyAnsLkIQw7Vnj8g4l9VEaX68M8HrmqINvUGxAt1ZH2qOSLErrlEO2MVENS8JPTbCa3lgmuyY8bPoCgTIQTwxftmQ9VdIso~JhDq1G2g1K0~cXG6H11Zeth0GwGYoofE68lcKhcuDhyb0ASmBIoIaAVJOtEcXRiC4KE4u5gftzOjVjksxnMViiO70fDEeQA3mTA~TzvNIAdLU4GEYLcKssg4wlfZCMMfxbs6HRKAq6A-ij0JjN-OlVK6dNVITfxpFOQmMg88GKMRgwaTVZuxLZ1zQeCkJKzsQtsVcSQ__"
@@ -28,7 +70,11 @@ function Finish() {
           </div>
           <p className="download-text">{t(`finish.download`)}</p>
         </div>
-        <Link to="/quiz/1" className="link nex-button  ">
+        <Link
+          to="/quiz/1"
+          onClick={() => handleRetake()}
+          className="link nex-button"
+        >
           <Button title="Retake quiz" />
         </Link>
       </div>

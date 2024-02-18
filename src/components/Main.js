@@ -1,10 +1,10 @@
 import { Outlet } from "react-router-dom";
 import Progress from "./Progress";
 
-function Main() {
+function Main({ questions }) {
   return (
     <main className="main">
-      <Progress />
+      <Progress questions={questions} />
       <Outlet />
     </main>
   );

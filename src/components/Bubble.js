@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import Button from "./Button";
 import { useTranslation } from "react-i18next";
 
-const Bubble = ({ question }) => {
+const Bubble = ({ question, handleOptionClick }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
   const { t } = useTranslation();
 
-  const handleOptionClick = (option) => {
+  const handleClick = (option) => {
     if (selectedOptions.includes(option)) {
       setSelectedOptions(selectedOptions.filter((item) => item !== option));
     } else {
@@ -28,7 +28,7 @@ const Bubble = ({ question }) => {
                 ? "btn btn-checked btn-circle "
                 : "btn btn-circle"
             }
-            onClick={() => handleOptionClick(option)}
+            onClick={() => handleClick(option)}
           >
             <div className="bubble-container ">
               <div className="bubble-card">
@@ -50,7 +50,11 @@ const Bubble = ({ question }) => {
           </div>
         ))}
       </div>
-      <Link to={question.next} className="link">
+      <Link
+        to={question.next}
+        onClick={() => handleOptionClick(selectedOptions)}
+        className="link"
+      >
         <Button disable={disable} />
       </Link>
     </>

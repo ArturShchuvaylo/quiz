@@ -3,12 +3,24 @@ import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-function Email() {
+function Email({ dispatch, order }) {
   const [email, setEmail] = useState("");
   const [isValidEmail, setIsValidEmail] = useState(true);
   const navigate = useNavigate();
 
   const { t } = useTranslation();
+
+  const handleOptionClick = () => {
+    dispatch({
+      type: "answerAdded",
+      payload: {
+        order: 6,
+        title: "Email",
+        type: "email",
+        answer: "email",
+      },
+    });
+  };
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
@@ -19,6 +31,7 @@ function Email() {
     const isValid = validateEmail(email);
     setIsValidEmail(isValid);
     if (isValid) {
+      handleOptionClick(order);
       navigate("/finish");
     }
   };

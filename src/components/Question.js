@@ -4,8 +4,20 @@ import SingleSelect from "./SingleSelect";
 import SingleSelectImage from "./SingleSelectImage";
 import { useTranslation } from "react-i18next";
 
-function Question({ question }) {
+function Question({ question, dispatch }) {
   const { t } = useTranslation();
+
+  const handleOptionClick = (option) => {
+    dispatch({
+      type: "answerAdded",
+      payload: {
+        order: question.order,
+        title: question.title,
+        type: question.type,
+        answer: option,
+      },
+    });
+  };
 
   return (
     <div className="main">
@@ -13,15 +25,26 @@ function Question({ question }) {
         <h4>{t(`questions.question-${question.order}.title`)}</h4>
         <p>{t(`questions.question-${question.order}.subtitle`)}</p>
       </div>
-      {question.type === "bubble" && <Bubble question={question} />}
+      {question.type === "bubble" && (
+        <Bubble question={question} handleOptionClick={handleOptionClick} />
+      )}
       {question.type === "multiple-select" && (
-        <MultipleSelect question={question} />
+        <MultipleSelect
+          question={question}
+          handleOptionClick={handleOptionClick}
+        />
       )}
       {question.type === "single-select-image" && (
-        <SingleSelectImage question={question} />
+        <SingleSelectImage
+          question={question}
+          handleOptionClick={handleOptionClick}
+        />
       )}
       {question.type === "single-select" && (
-        <SingleSelect question={question} />
+        <SingleSelect
+          question={question}
+          handleOptionClick={handleOptionClick}
+        />
       )}
     </div>
   );

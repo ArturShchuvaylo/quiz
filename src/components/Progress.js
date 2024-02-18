@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function Progress() {
+function Progress({ questions }) {
   const navigate = useNavigate();
   const currentPath = window.location.pathname;
 
@@ -27,10 +27,10 @@ function Progress() {
         {/* </Link> */}
 
         <p>
-          <strong>2</strong> / 5
+          <strong>{toBack + 1}</strong> / {questions.length}
         </p>
       </div>
-      <progress max={5} value={2} />
+      <progress max={questions.length} value={toBack + 1} />
     </header>
   );
 }

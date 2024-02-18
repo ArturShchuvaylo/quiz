@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
-const SingleSelect = ({ question }) => {
+const SingleSelect = ({ question, handleOptionClick }) => {
   const { t, i18n } = useTranslation();
 
   const lng = {
@@ -17,6 +17,7 @@ const SingleSelect = ({ question }) => {
           <button
             onClick={() => {
               i18n.changeLanguage(lng[option]);
+              handleOptionClick(option);
             }}
             className="btn btn-option"
             key={option}
