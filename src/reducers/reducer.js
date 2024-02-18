@@ -14,7 +14,6 @@ function reducer(state, { type, payload }) {
       };
 
     case "localStorageReceived":
-      console.log(payload);
       return {
         ...state,
         questions: payload.questions,

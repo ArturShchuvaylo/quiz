@@ -14,6 +14,7 @@ import Spinner from "./Spinner";
 import Email from "./Email";
 import Error from "./Error";
 import FinishPage from "./FinishPage";
+import "../i18n.js";
 
 function App() {
   const [{ questions, status, answers }, dispatch] = useReducer(
