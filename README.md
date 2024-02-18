@@ -13,6 +13,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
 Technologies Used
 In this project, the following technologies were utilized:
+
 useReducer
 local json-server 
 SCSS
