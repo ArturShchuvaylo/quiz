@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next";
 const SingleSelect = ({ question, handleOptionClick }) => {
   const { t, i18n } = useTranslation();
 
-  const lng = {
+  const languages = {
     English: "en",
     Spanish: "es",
     French: "fr",
@@ -16,7 +16,7 @@ const SingleSelect = ({ question, handleOptionClick }) => {
         <Link className="link" to={question.next} key={option}>
           <button
             onClick={() => {
-              i18n.changeLanguage(lng[option]);
+              i18n.changeLanguage(languages[option]);
               handleOptionClick(option);
             }}
             className="btn btn-option"

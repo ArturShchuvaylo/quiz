@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
-import Button from "./Button";
 import { useTranslation } from "react-i18next";
+import Button from "./Button";
 import { downloadCSV } from "../csv/convertToCSV";
 
-function FinishPage({ dispatch, answers }) {
+const FinishPage = ({ dispatch, answers }) => {
   const { t } = useTranslation();
 
   const handleRetake = () => {
@@ -38,6 +38,6 @@ function FinishPage({ dispatch, answers }) {
       </Link>
     </div>
   );
-}
+};
 
 export default FinishPage;

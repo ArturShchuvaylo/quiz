@@ -1,10 +1,10 @@
+import { useTranslation } from "react-i18next";
 import Bubble from "./Bubble";
 import MultipleSelect from "./MultipleSelect";
 import SingleSelect from "./SingleSelect";
 import SingleSelectImage from "./SingleSelectImage";
-import { useTranslation } from "react-i18next";
 
-function Question({ question, dispatch }) {
+const Question = ({ question, dispatch }) => {
   const { t } = useTranslation();
 
   const handleOptionClick = (option) => {
@@ -48,6 +48,6 @@ function Question({ question, dispatch }) {
       )}
     </>
   );
-}
+};
 
 export default Question;

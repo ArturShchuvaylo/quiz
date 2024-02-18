@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "./Button";
 import { useTranslation } from "react-i18next";
+import Button from "./Button";
 
 const MultipleSelect = ({ question, handleOptionClick }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -15,7 +15,7 @@ const MultipleSelect = ({ question, handleOptionClick }) => {
     }
   };
 
-  const disable = selectedOptions.length === 0;
+  const isDisabled = selectedOptions.length === 0;
 
   return (
     <>
@@ -28,9 +28,6 @@ const MultipleSelect = ({ question, handleOptionClick }) => {
                 ? "btn btn-checked btn-option"
                 : "btn btn-option"
             }
-            // onClick={() => {
-            //   handleOptionClick(option);
-            // }}
           >
             <div className="container-checkbox">
               <p>
@@ -56,7 +53,7 @@ const MultipleSelect = ({ question, handleOptionClick }) => {
         onClick={() => handleOptionClick(selectedOptions)}
         className="link"
       >
-        <Button disable={disable} />
+        <Button isDisable={isDisabled} />
       </Link>
     </>
   );

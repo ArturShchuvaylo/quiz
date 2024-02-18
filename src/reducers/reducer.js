@@ -1,6 +1,6 @@
 const initialState = {
   questions: [],
-  status: "loading", //'error','active','finished'
+  status: "loading",
   answers: [],
 };
 

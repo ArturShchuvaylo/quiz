@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 
-function Progress({ questions }) {
+const Progress = ({ questions }) => {
   const navigate = useNavigate();
   const currentPath = window.location.pathname;
   const toBackIndex = parseInt(currentPath.split("/")[2]);
@@ -30,6 +30,6 @@ function Progress({ questions }) {
       <progress max={questions.length} value={toBack + 1} />
     </header>
   );
-}
+};
 
 export default Progress;

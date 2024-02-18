@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Button from "./Button";
 import { useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import Button from "./Button";
 
 function Email({ dispatch, order }) {
   const [email, setEmail] = useState("");

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Button from "./Button";
 import { useTranslation } from "react-i18next";
+import Button from "./Button";
 
 const Bubble = ({ question, handleOptionClick }) => {
   const [selectedOptions, setSelectedOptions] = useState([]);
@@ -15,7 +15,7 @@ const Bubble = ({ question, handleOptionClick }) => {
     }
   };
 
-  const disable = selectedOptions.length === 0;
+  const isDisabled = selectedOptions.length === 0;
 
   return (
     <>
@@ -56,7 +56,7 @@ const Bubble = ({ question, handleOptionClick }) => {
         onClick={() => handleOptionClick(selectedOptions)}
         className="link"
       >
-        <Button disable={disable} />
+        <Button disabled={isDisabled} />
       </Link>
     </>
   );
