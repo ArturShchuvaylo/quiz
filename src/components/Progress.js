@@ -3,8 +3,8 @@ import { useNavigate } from "react-router-dom";
 function Progress({ questions }) {
   const navigate = useNavigate();
   const currentPath = window.location.pathname;
-
-  const toBack = currentPath.split("/")[2] - 1;
+  const toBackIndex = parseInt(currentPath.split("/")[2]);
+  const toBack = isNaN(toBackIndex) ? 0 : toBackIndex - 1;
 
   const goBack = () => {
     if (toBack > 0) {
@@ -15,7 +15,6 @@ function Progress({ questions }) {
   return (
     <header className="progress">
       <div className="progress-content">
-        {/* <Link to="/1" className="link"> */}
         <div
           onClick={() => {
             goBack();
@@ -24,8 +23,6 @@ function Progress({ questions }) {
         >
           &#60;
         </div>
-        {/* </Link> */}
-
         <p>
           <strong>{toBack + 1}</strong> / {questions.length}
         </p>

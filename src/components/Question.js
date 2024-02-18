@@ -20,7 +20,7 @@ function Question({ question, dispatch }) {
   };
 
   return (
-    <div className="main">
+    <>
       <div className="question-head">
         <h4>{t(`questions.question-${question.order}.title`)}</h4>
         <p>{t(`questions.question-${question.order}.subtitle`)}</p>
@@ -46,7 +46,7 @@ function Question({ question, dispatch }) {
           handleOptionClick={handleOptionClick}
         />
       )}
-    </div>
+    </>
   );
 }
 

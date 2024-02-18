@@ -56,13 +56,8 @@ function Email({ dispatch, order }) {
         {!isValidEmail && <div className="error-email">{t(`email.error`)}</div>}
       </div>
 
-      <div
-        // to="/finish"
-        // className="link nex-button"
-        onClick={() => handleSubmit()}
-      >
-        <Button disable={disable} />
-      </div>
+      {/* <span onClick={() => handleSubmit()}> */}
+      <Button disable={disable} onClick={() => handleSubmit()} />
     </div>
   );
 }

@@ -24,7 +24,7 @@ function Spinner() {
     }, 50);
 
     return () => clearInterval(intervalId);
-  }, []);
+  }, [navigate]);
 
   return (
     <>

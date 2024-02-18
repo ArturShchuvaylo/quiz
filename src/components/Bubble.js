@@ -50,6 +50,7 @@ const Bubble = ({ question, handleOptionClick }) => {
           </div>
         ))}
       </div>
+
       <Link
         to={question.next}
         onClick={() => handleOptionClick(selectedOptions)}

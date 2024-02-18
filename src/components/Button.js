@@ -1,12 +1,11 @@
 import { useTranslation } from "react-i18next";
 
-function Button({ title = "Next", disable }) {
+function Button({ title = "Next", disable, onClick = null }) {
   const { t } = useTranslation();
   const changedTitle = title.split(" ").join("-").toLowerCase();
-  console.log(changedTitle);
 
   return (
-    <button disabled={disable} className="btn btn-ui">
+    <button disabled={disable} onClick={onClick} className="btn btn-ui">
       {t(`buttons.button-${changedTitle}`)}
     </button>
   );
