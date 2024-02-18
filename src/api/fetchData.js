@@ -1,6 +1,6 @@
 // const url = "http://localhost:9000/questions";
 const url2 =
-  "http://raw.githubusercontent.com/ArturShchuvaylo/quiz/master/data/questions.json";
+  "https://raw.githubusercontent.com/ArturShchuvaylo/quiz/master/data/questions.json";
 
 const fetchData = async () => {
   try {
