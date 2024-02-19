@@ -17,7 +17,7 @@ function Email({ dispatch, order }) {
         order: 6,
         title: "Email",
         type: "email",
-        answer: "email",
+        answer: email,
       },
     });
   };
